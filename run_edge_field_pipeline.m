@@ -29,6 +29,7 @@ end
 
 if ~isempty(allSummary)
     writetable(allSummary, fullfile(outputDir, 'summary_all_recipes.csv'));
+    [bestTbl, rankTbl] = build_strategy_ranking(allSummary, outputDir); %#ok<NASGU,ASGLU>
 end
 save(fullfile(outputDir, 'workspace_all.mat'));
 fprintf('Done. Results saved to: %s\n', outputDir);

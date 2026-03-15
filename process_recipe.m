@@ -42,6 +42,8 @@ for l = 1:numel(lotDirs)
             if ~isempty(summaryLocal)
                 summaryLocal.recipe = repmat({recipeName}, height(summaryLocal), 1);
                 summaryLocal.lot = repmat({lotName}, height(summaryLocal), 1);
+                summaryLocal.parity = repmat({parity}, height(summaryLocal), 1);
+                summaryLocal.signal = repmat({signalType}, height(summaryLocal), 1);
                 summaryTbl = [summaryTbl; summaryLocal]; %#ok<AGROW>
             end
             save(fullfile(resultDir, 'metrics_by_strategy.mat'), 'metricsByStrategy');
